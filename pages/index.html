@@ -5,10 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/index.css">
-    <title></title>
+    <title>User Finder Github</title>
 </head>
 <body>
+    <div class="container">
+        <div class="container-header">
+            <span class="header-title">User Finder Github</span>
+            <span class="header-Color">Light🌟</span>
+        </div>
+        <div class="container-search">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-input" placeholder="Procurar usuário">
+            <button class="search-button" onclick="Pesquisar()">Pesquisar</button>
+        </div>
+        <div class="container-user">
+            <div class="user-photo">
+                <img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="" class="photo">
+                <div class="user-area-name-link">
+                    <p class="nickname">arauuauaujo310</p>
+                    <button class="button">Veja o Pefil</button>
+                </div>
+                <div class="user-status">
+                    <ul class="status-ul">
+                        <li class="status-li"><span class="seguidores"><i class="fas fa-users"></i>Seguidores</span><span class="badge badge-seguidores">45</span></li>
+                        <li class="status-li"><span class="seguindo"><i class="fas fa-heart"></i>Seguindo</span><span class="badge badge-seguindo">45</span></li>
+                        <li class="status-li"><span class="stars"><i class="fas fa-star"></i>Stars</span><span class="badge badge-stars">45</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="user-bio">
+                <div class="bio-name-data">
+                    <span class="name">Leonardo Araujo</span>
+                    <span class="data">Entrou 2008</span>
+                </div>
+                <p class="biografia">Desenvolvedor frontend na AjaxTI</p>
+            </div>
+            <div class="user-repos">
+                <table class="table">
+                    <thead class="thead">
+                        <tr>
+                            <th>Projeto</th>
+                            <th>Stars</th>
+                            <th>Forks</th>
+                            <th>Watch</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="tbody">
+                        <tr>
+                            <td>exemplo</td>
+                            <td>30</td>
+                            <td>10</td>
+                            <td>2</td>
+                        </tr>
+
+                        <tr>
+                            <td>exemplo</td>
+                            <td>30</td>
+                            <td>10</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="user-footer">
+                <i class="fas fa-map-marker-alt"></i><span>Maracanaú</span>
+                <i class="fas fa-building"></i><span>AjaxTI</span>
+                <i class="fas fa-icons"></i><span>leonardo.araujo310</span>
+            </div>
+        </div>
+    </div>
     
 </body>
 <script src="../javascript/index.js"></script>
+<script src="https://kit.fontawesome.com/115461b4d8.js" crossorigin="anonymous"></script>
 </html>
