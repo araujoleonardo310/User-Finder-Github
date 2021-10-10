@@ -5,32 +5,28 @@ const containerUser = document.querySelector('.container-user');
 const containerRepos = document.querySelector('.user-repos');
 const tbody = document.querySelector(".tbody")
 
-function OcultarAnim(){
-    document.getElementById('animation').style.display = 'none';
-}
+
 const btnSearch = document.getElementById('btn-search');
-btnSearch.addEventListener("click", getUser, OcultarAnim);
+btnSearch.addEventListener("click", getUser);
 
 async function getUser() {
     const name = document.getElementById("search-input").value;
-
     if(name == "") {
-        alert('Digite um usuário para pesquisar');
+        alert('Digite um usuário!');
+
     } else {
         const responseProfile = await fetch(`${url}/${name}`);
         const profile = await responseProfile.json();
 
         const responseRepos = await fetch(`${url}/${name}/repos?per_page=${count}&sort=${sort}`);
         const repos = await responseRepos.json();
-
-        console.log(repos)
-
         return ShowProfile(profile), showRepos(repos);        
     };
 
 };
 
 function ShowProfile(user) {
+
      containerUser.innerHTML = `
              <div class="user-photo">
                  <img src="${user.avatar_url}" alt="" class="photo">

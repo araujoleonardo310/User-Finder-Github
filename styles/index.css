@@ -144,7 +144,8 @@ table {
 #animation {
     display: flex;
     width: 100%;
-    justify-content: center;
+    height: 115vh;
+    justify-content: space-between;
     
 }
 
