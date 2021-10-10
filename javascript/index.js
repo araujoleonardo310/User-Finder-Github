@@ -55,10 +55,9 @@ function ShowProfile(user) {
                 <table class="table">
                     <thead class="thead">
                         <tr>
-                            <th>Projeto</th>
+                            <th>Projetos</th>
                             <th>Stars</th>
                             <th>Forks</th>
-                            <th>Watchers</th>
                         </tr>
                     </thead>
                     <tbody class="tbody">
@@ -66,9 +65,9 @@ function ShowProfile(user) {
                 </table>
             </div>                      
              <div class="user-footer">
-                 <i class="fas fa-map-marker-alt"></i><span>${user.location}</span>
-                 <i class="fas fa-building"></i><span>${user.company}</span>
-                 <i class="fas fa-icons"></i><span>${user.twitter_username}</span>
+                 <span><i class="fas fa-map-marker-alt"></i> ${user.location}</span>
+                 <span><i class="fas fa-building"></i> ${user.company}</span>
+                 <span><i class="fas fa-icons"></i> ${user.twitter_username}</span>
              </div>
              `              
  };
@@ -78,11 +77,10 @@ function ShowProfile(user) {
     repos.forEach(repo => {
         output += `    
         <tr>
-            <td><a href="${repo.html_url}">${repo.name}</td>
-            <td>${repo.stargazers_count}</td>
-            <td>${repo.forks_count}</td>
-            <td>#${repo.watchers_count}</td>
-        </tr>               
+            <td class="nameProject"><a href="${repo.html_url}" target="_blank">${repo.name}</td>
+            <td class="numbers">${repo.stargazers_count}</td>
+            <td class="numbers">${repo.forks_count}</td>
+        </tr>              
     `
         document.querySelector('.tbody').innerHTML = output;
     });
