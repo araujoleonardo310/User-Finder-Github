@@ -1,6 +1,9 @@
 const url = 'https://api.github.com/users';
 const count = 5;
-const sort = "created:asc"
+const sort = "created:asc";
+const containerUser = document.querySelector('.container-user');
+const containerRepos = document.querySelector('.user-repos');
+const tbody = document.querySelector(".tbody")
 
 function OcultarAnim(){
     document.getElementById('animation').style.display = 'none';
@@ -9,26 +12,26 @@ const btnSearch = document.getElementById('btn-search');
 btnSearch.addEventListener("click", getUser, OcultarAnim);
 
 async function getUser() {
-    const User = document.getElementById("search-input").value;
+    const name = document.getElementById("search-input").value;
 
-    if(User == "") {
+    if(name == "") {
         alert('Digite um usuário para pesquisar');
     } else {
-        const responseProfile = await fetch(`${url}/${User}`);
+        const responseProfile = await fetch(`${url}/${name}`);
         const profile = await responseProfile.json();
 
-        const responseRepos = await fetch(`${url}/${User}/repos?per_page=${count}&sort=${sort}`);
-        const profileRepos = await responseRepos.json();
+        const responseRepos = await fetch(`${url}/${name}/repos?per_page=${count}&sort=${sort}`);
+        const repos = await responseRepos.json();
 
-        return ShowProfile(profile, profileRepos);
+        console.log(repos)
+
+        return ShowProfile(profile), showRepos(repos);        
     };
 
 };
 
-function ShowProfile(user, repos) {
-     
-     const profile = document.querySelector('.container-user')
-     profile.innerHTML = `
+function ShowProfile(user) {
+     containerUser.innerHTML = `
              <div class="user-photo">
                  <img src="${user.avatar_url}" alt="" class="photo">
                  <div class="user-area-name-link">
@@ -42,8 +45,7 @@ function ShowProfile(user, repos) {
                          <li class="status-li"><span class="repositorios"><i class="fas fa-rocket"></i>Repositórios</span><span class="badge badge-respositorios">${user.public_repos}</span></li>
                      </ul>
                  </div>
-             </div>
-             
+             </div>             
              <div class="user-bio">
                  <div class="bio-name-data">
                      <span class="name">${user.name}</span>
@@ -51,16 +53,43 @@ function ShowProfile(user, repos) {
                  </div>
                  <p class="biografia">${user.bio}</p>
              </div>
- 
-             <div class="user-repos">                
-             </div>
- 
+             <div class="user-repos">
+                <table class="table">
+                    <thead class="thead">
+                        <tr>
+                            <th>Projetos</th>
+                            <th>Stars</th>
+                            <th>Forks</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                    </tbody>
+                </table>
+            </div>                      
              <div class="user-footer">
-                 <i class="fas fa-map-marker-alt"></i><span>${user.location}</span>
-                 <i class="fas fa-building"></i><span>${user.company}</span>
-                 <i class="fas fa-icons"></i><span>${user.twitter_username}</span>
+                 <span><i class="fas fa-map-marker-alt"></i> ${user.location}</span>
+                 <span><i class="fas fa-building"></i> ${user.company}</span>
+                 <span><i class="fas fa-icons"></i> ${user.twitter_username}</span>
              </div>
              `              
  };
+
+ function showRepos(repos) {
+    let output = "";
+    repos.forEach(repo => {
+        output += `    
+        <tr>
+            <td class="nameProject"><a href="${repo.html_url}" target="_blank">${repo.name}</td>
+            <td class="numbers">${repo.stargazers_count}</td>
+            <td class="numbers">${repo.forks_count}</td>
+        </tr>              
+    `
+        document.querySelector('.tbody').innerHTML = output;
+    });
+};
+
+    
+
+
  
  
