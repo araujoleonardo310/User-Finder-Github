@@ -2,9 +2,11 @@ const url = 'https://api.github.com/users';
 const count = 5;
 const sort = "created:asc"
 
-
+function OcultarAnim(){
+    document.getElementById('animation').style.display = 'none';
+}
 const btnSearch = document.getElementById('btn-search');
-btnSearch.addEventListener("click", getUser);
+btnSearch.addEventListener("click", getUser, OcultarAnim);
 
 async function getUser() {
     const User = document.getElementById("search-input").value;

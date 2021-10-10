@@ -141,6 +141,22 @@ table {
     flex-wrap: wrap;    
 }
 
+#animation {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+}
+
+#lottie-player{
+    background-color: transparent;
+    width: 40em;
+    position: relative;
+    bottom: 32em;
+    left: 25em;
+
+}
+
 .user-photo {
     display: flex;
     align-items: center;
