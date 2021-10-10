@@ -1,9 +1,10 @@
 const url = 'https://api.github.com/users';
 const count = 5;
 const sort = "created:asc";
+const respVazia = "";
 const containerUser = document.querySelector('.container-user');
 const containerRepos = document.querySelector('.user-repos');
-const tbody = document.querySelector(".tbody")
+const tbody = document.querySelector(".tbody");
 
 
 const btnSearch = document.getElementById('btn-search');
@@ -27,7 +28,7 @@ async function getUser() {
 
 function ShowProfile(user) {
 
-     containerUser.innerHTML = `
+    containerUser.innerHTML = `
              <div class="user-photo">
                  <img src="${user.avatar_url}" alt="" class="photo">
                  <div class="user-area-name-link">

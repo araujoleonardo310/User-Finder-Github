@@ -102,7 +102,7 @@ table {
 }
 
 #search-input {
-    width: 32em;
+    width: 27em;
     height: 3vh;
     color: #FFF;
     border: none;
@@ -121,7 +121,7 @@ table {
     outline: none;
 }
 
-.search-button {
+.search-button, .clean-button {
     margin-left: 1em;
     border: none;
     padding: 0.6em;
@@ -130,6 +130,10 @@ table {
     font-weight: 700;
     font-size: 1em;
     border-radius: 10px;
+}
+
+.clean-button {
+    background-color: #ff0000;
 }
 
 .container-user {
@@ -240,9 +244,10 @@ table {
 }
 
 .user-repos {  
+    margin-top: 1em;
     position: relative;  
     left: 17em;
-    bottom: 20em;
+    bottom: 22em;
 }
 
 .table {
@@ -275,8 +280,8 @@ table {
     justify-content: space-between;
     width: 30%;
     position: absolute;
-    top: 53em;
-    margin-left: 20em;
+    top: 51em;
+    margin-left: 1em;
     font-size: 0.8em;
 }
 
