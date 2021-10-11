@@ -12,7 +12,7 @@
 
 <h2 id="sobre">Sobre</h2><br>
 
-<p>Projeto e desenvolvimento de uma api de busca e retorno de usuários que tem conta no GitHub</p>
+API ***busca*** e ***retorno*** de usuários da comunidade GitHub.
 
 <br>
 
@@ -20,11 +20,15 @@
 
 <h2 id="habilidades">Habilidades Desenvolvidas</h2><br>
 
-* Requições por http; 
+* Lógica de aplicação;
+* Versionamento;
+* Correção de bugs
+* Debugação pelo navegador;
+* Compreensão de métodos e status de requisições;
 * Tratamento de dados, array e objetos;
-* Programação script;
-* Estilização em CSS;
-* Lógica;
+* Programação em script;
+* Estilização de painél e buttons;
+
 
 <h2 id="status">Status</h2><br>
 
