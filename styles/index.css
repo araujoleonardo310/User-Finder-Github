@@ -256,18 +256,16 @@ table {
 }
 
 .nameProject {
-    padding: 1.2em 5em;
-    justify-content: flex-start;
+    display: flex;
+    width: 16em;
+    padding: 1em;
+    justify-content: center;
 }
 
 .thead th {
     padding: 0.5em 1.5em;
     font-weight: 700;
     border-bottom: 1px solid #fff;
-}
-
-.tbody td {
-    padding-top: 1em;
 }
 
 .tbody a {
