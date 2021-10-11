@@ -117,14 +117,14 @@ function ShowProfile(user) {
  function showRepos(repos) {
     let output = "";
     repos.forEach(repo => {
-
-        output += `    
+        output += 
+        `    
         <tr>
             <td class="nameProject"><a href="${repo.html_url}" target="_blank">${repo.name}</td>
             <td class="numbers">${repo.stargazers_count}</td>
             <td class="numbers">${repo.forks_count}</td>
         </tr>              
-    `
+        `
         document.querySelector('.tbody').innerHTML = output;
     });
 };
