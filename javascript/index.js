@@ -51,8 +51,8 @@ function ShowProfile(user) {
     var company = `${user.company}`
     var social = `${user.twitter_username}`;
 
-    if((social == "null") || (social == "undefined")) {
-        social = repostVazia;
+    if((nome == "null") || (nome == "undefined")) {
+        nome = repostVazia;
     }
 
     if((bio == "null") || (bio == "undefined"))  {
