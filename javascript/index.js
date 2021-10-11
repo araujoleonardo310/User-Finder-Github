@@ -5,7 +5,7 @@ const respVazia = "";
 const containerUser = document.querySelector('.container-user');
 const containerRepos = document.querySelector('.user-repos');
 const tbody = document.querySelector(".tbody");
-
+const animation = document.getElementById('animation');
 
 const btnSearch = document.getElementById('btn-search');
 btnSearch.addEventListener("click", getUser);
@@ -17,11 +17,17 @@ async function getUser() {
 
     } else {
         const responseProfile = await fetch(`${url}/${name}`);
-        const profile = await responseProfile.json();
-
         const responseRepos = await fetch(`${url}/${name}/repos?per_page=${count}&sort=${sort}`);
-        const repos = await responseRepos.json();
-        return ShowProfile(profile), showRepos(repos);        
+        console.log(responseProfile)
+
+        if (responseProfile.ok) {
+            const profile = await responseProfile.json();
+            const repos = await responseRepos.json();
+            return ShowProfile(profile), showRepos(repos);
+
+        } else {
+            return alert('Usuário não encontrado!')
+        }        
     };
 
 };
@@ -68,7 +74,7 @@ function ShowProfile(user) {
                  <span><i class="fas fa-building"></i> ${user.company}</span>
                  <span><i class="fas fa-icons"></i> ${user.twitter_username}</span>
              </div>
-             `              
+             `           
  };
 
  function showRepos(repos) {
