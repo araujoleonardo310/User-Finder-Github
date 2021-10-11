@@ -76,7 +76,7 @@ function ShowProfile(user) {
                  <img src="${user.avatar_url}" alt="" class="photo">
                  <div class="user-area-name-link">
                      <p class="nickname">${user.login}</p>
-                     <a href="${user.html_url}" class="button">Veja o Pefil</a>
+                     <a href="${user.html_url}" class="button" target="_blank">Veja o Pefil</a>
                  </div>
                  <div class="user-status">
                      <ul class="status-ul">
@@ -97,7 +97,7 @@ function ShowProfile(user) {
                 <table class="table">
                     <thead class="thead">
                         <tr>
-                            <th>Projetos</th>
+                            <th>Últimos Projetos</th>
                             <th>Stars</th>
                             <th>Forks</th>
                         </tr>
