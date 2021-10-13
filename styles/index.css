@@ -51,7 +51,6 @@ q:before, q:after {
     content: none;
 }
 
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -145,23 +144,10 @@ table {
     flex-wrap: wrap;    
 }
 
-#animation {
-    display: flex;
-    width: 100%;
-    height: 115vh;
-    justify-content: space-between;
-    
+.animation {
+    margin-top: 2em;
+    margin-left: 10em;
 }
-
-#lottie-player{
-    background-color: transparent;
-    width: 40em;
-    position: relative;
-    bottom: 32em;
-    left: 25em;
-
-}
-
 .user-photo {
     display: flex;
     align-items: center;

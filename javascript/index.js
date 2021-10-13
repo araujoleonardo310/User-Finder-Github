@@ -15,9 +15,6 @@ function removeAnim(respost) {
     } 
 };
 
-removeAnim(true);
-
-
 const btnSearch = document.getElementById('btn-search');
 btnSearch.addEventListener("click", getUser);
 
@@ -128,9 +125,3 @@ function ShowProfile(user) {
         document.querySelector('.tbody').innerHTML = output;
     });
 };
-
-    
-
-
- 
- 
