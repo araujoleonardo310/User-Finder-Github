@@ -12,7 +12,7 @@ const animationParent = animation.parentNode;
 function removeAnim(respost) {
     if (respost == true) {
         animationParent.removeChild(animation);
-    } 
+    }
 };
 
 const btnSearch = document.getElementById('btn-search');
@@ -20,21 +20,21 @@ btnSearch.addEventListener("click", getUser);
 
 async function getUser() {
     const name = document.getElementById("search-input").value;
-    if(name == "") {
+    if (name == "") {
         alert('Digite um usuário!');
 
     } else {
         const responseProfile = await fetch(`${url}/${name}`);
         const responseRepos = await fetch(`${url}/${name}/repos?per_page=${count}&sort=${sort}`);
-        
-        if (responseProfile.ok) {       
+
+        if (responseProfile.ok) {
             const profile = await responseProfile.json();
-            const repos = await responseRepos.json(); 
+            const repos = await responseRepos.json();
             return ShowProfile(profile), showRepos(repos);
 
         } else {
             return alert('Usuário não encontrado!');
-        }        
+        }
     };
 
 };
@@ -48,23 +48,23 @@ function ShowProfile(user) {
     var company = `${user.company}`
     var social = `${user.twitter_username}`;
 
-    if((nome == "null") || (nome == "undefined")) {
+    if ((nome == "null") || (nome == "undefined")) {
         nome = repostVazia;
     }
 
-    if((bio == "null") || (bio == "undefined"))  {
+    if ((bio == "null") || (bio == "undefined")) {
         bio = repostVazia;
     }
 
-    if((location == "null") || (location == "undefined"))  {
-        location = repostVazia;   
+    if ((location == "null") || (location == "undefined")) {
+        location = repostVazia;
     }
 
-    if((company == "null") || (company == "undefined")) {
+    if ((company == "null") || (company == "undefined")) {
         company = repostVazia;
     }
 
-    if((social == "null") || (social == "undefined"))  {
+    if ((social == "null") || (social == "undefined")) {
         social = repostVazia;
     }
 
@@ -108,14 +108,14 @@ function ShowProfile(user) {
                  <span><i class="fas fa-building"></i> ${company}</span>
                  <span><i class="fas fa-icons"></i> ${social}</span>
              </div>
-             `           
- };
+             `
+};
 
- function showRepos(repos) {
+function showRepos(repos) {
     let output = "";
     repos.forEach(repo => {
-        output += 
-        `    
+        output +=
+            `    
         <tr>
             <td class="nameProject"><a href="${repo.html_url}" target="_blank">${repo.name}</td>
             <td class="numbers">${repo.stargazers_count}</td>
